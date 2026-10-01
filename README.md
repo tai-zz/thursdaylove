@@ -30,12 +30,17 @@ reabrir o site, a certidão continua assinada. O botão *Assinar de novo* limpa.
 
 ## Para abrir no celular
 
-É um site estático, sem build e sem dependências. Basta publicar a pasta em
-qualquer lugar e mandar o link. Pelo GitHub Pages:
+É um site estático, sem build e sem dependências, com o `index.html` na raiz.
 
-> Settings → Pages → Source: **Deploy from a branch** → Branch: `claude/vibrant-clarke-5dxfvi` (ou `main`) → `/ (root)`
+Para ligar o GitHub Pages (só precisa ser feito uma vez, e só o dono do
+repositório consegue — o token do GitHub Actions não tem permissão para criar o
+site):
 
-O endereço fica `https://tai-zz.github.io/thursdaylove/`.
+> **Settings → Pages → Source: `Deploy from a branch` → Branch:
+> `claude/vibrant-clarke-5dxfvi` + `/ (root)` → Save**
+
+Em um ou dois minutos o site fica em `https://tai-zz.github.io/thursdaylove/`.
+Depois disso, todo push na branch republica sozinho.
 
 Também funciona abrindo o `index.html` direto do aparelho — a imagem embutida em
 base64 garante que o botão de salvar continue funcionando nesse caso.
