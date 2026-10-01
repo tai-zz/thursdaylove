@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#f7e7ea">
+<title>Certidão de Casamento — Ana Júlia & João Eduardo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&family=Parisienne&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- fundo animado -->
+<div class="sky" aria-hidden="true"></div>
+<div class="hearts-bg" id="heartsBg" aria-hidden="true"></div>
+
+<!-- ============ TELA DE ABERTURA ============ -->
+<section class="intro" id="intro">
+  <div class="intro-inner">
+    <p class="intro-kicker" data-anim="1">Para</p>
+    <h1 class="intro-name" data-anim="2">Ana Júlia</h1>
+    <p class="intro-sub" data-anim="3">Bassani de Souza Nascimento</p>
+
+    <button class="envelope" id="envelope" aria-label="Abrir a carta">
+      <span class="env-back"></span>
+      <span class="env-letter"><span class="env-heart">💌</span></span>
+      <span class="env-front"></span>
+      <span class="env-flap"></span>
+      <span class="env-seal">❤</span>
+    </button>
+
+    <p class="intro-hint" data-anim="4">toque no envelope para abrir</p>
+  </div>
+</section>
+
+<!-- ============ PALCO PRINCIPAL ============ -->
+<main class="stage" id="stage" aria-hidden="true">
+
+  <header class="head">
+    <p class="head-sm">com todo o meu amor,</p>
+    <p class="head-lg">João Eduardo &amp; Ana Júlia</p>
+  </header>
+
+  <!-- moldura animada + certidão -->
+  <div class="frame" id="frame">
+    <div class="paper" id="paper">
+
+      <div class="cert" id="cert">
+        <img src="assets/certidao.png" alt="Certidão de casamento" id="certImg" draggable="false">
+
+        <!-- campos preenchidos sobre as linhas -->
+        <span class="fill f-noiva" id="fNoiva" data-max="0.368"><b></b></span>
+        <span class="fill f-noivo" id="fNoivo" data-max="0.426"><b></b></span>
+        <span class="fill f-dia" id="fDia" data-max="0.174"><b></b></span>
+        <span class="fill f-mes" id="fMes" data-max="0.200"><b></b></span>
+
+        <!-- carimbo de assinado -->
+        <div class="stamp" id="stamp" aria-hidden="true">
+          <span class="stamp-top">ASSINADO</span>
+          <span class="stamp-mid">COM AMOR</span>
+          <span class="stamp-bot" id="stampDate"></span>
+        </div>
+      </div>
+
+      <!-- área de assinatura -->
+      <div class="sign-area" id="signArea">
+        <p class="sign-label" id="signLabel">assine com o dedo aqui <span class="wiggle">✍️</span></p>
+        <div class="pad-wrap">
+          <canvas id="pad" class="pad"></canvas>
+          <div class="pad-line"></div>
+          <div class="pad-ghost" id="padGhost">Ana Júlia</div>
+        </div>
+        <p class="sign-name">Ana Júlia Bassani de Souza Nascimento</p>
+        <p class="sign-role">a noiva</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="actions" id="actions">
+    <button class="btn btn-ghost" id="btnClear" disabled>Limpar</button>
+    <button class="btn btn-main" id="btnSign" disabled>
+      <span>Eu aceito 💍</span>
+    </button>
+  </div>
+
+  <!-- pós-assinatura -->
+  <div class="done" id="done" aria-hidden="true">
+    <p class="done-title">Para sempre, oficialmente. 💞</p>
+    <p class="done-text">Assinado por <strong>Ana Júlia</strong> em <span id="doneDate"></span>.</p>
+    <div class="done-actions">
+      <button class="btn btn-main" id="btnDownload">Salvar certidão 📜</button>
+      <button class="btn btn-ghost" id="btnRedo">Assinar de novo</button>
+    </div>
+  </div>
+
+  <footer class="foot">feito com ❤️ por João Eduardo</footer>
+</main>
+
+<!-- camada de celebração -->
+<canvas id="fx" class="fx" aria-hidden="true"></canvas>
+<div class="flash" id="flash" aria-hidden="true"></div>
+
+<script src="assets/certidao-data.js" defer></script>
+<script src="script.js" defer></script>
+</body>
+</html>
